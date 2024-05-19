@@ -1,0 +1,158 @@
+card.addEventListener("click", evt => {
+
+      if (evt.target !== card.classList.contains(".selected")) {
+
+        console.log("clicked target: ", evt.target)
+        card.classList.add('selected')
+        document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+      } else if (evt.target === card.classList.contains(".selected")) {
+
+        console.log("clicked target: ", evt.target)
+        card.classList.remove('selected')
+        document.querySelector(".info").textContent = 'No learner is selected'
+
+      } else if (evt.target ===  mentor.classList.contains(".closed")) {
+
+        console.log("clicked target: ", evt.target)
+        mentor.classList.remove('closed')
+        mentor.classList.add('open')
+        card.classList.add('selected')
+        document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+      } else if (evt.target ===  mentor.classList.contains(".open")) {
+
+        console.log("clicked target: ", evt.target)
+        mentor.classList.remove('open')
+        mentor.classList.add('closed')
+        
+      }
+
+    })
+
+    let selectedCard = document.querySelector('.selected')
+
+      console.log("clicked target: ",evt.target)
+
+      if (document.querySelector('.selected')) {
+
+        console.log('selectedCard: ', document.querySelector('.selected'))
+
+        selectedCard.classList.remove('selected')
+        document.querySelector(".info").textContent = 'No learner is selected'
+
+      } else if (card.classList.contains('selected')) {
+
+        selectedCard.classList.remove('selected')
+        document.querySelector(".info").textContent = 'No learner is selected'
+
+      } else if (evt.target === mentor.classList.contains('closed')) {
+
+        console.log("mentors: ",evt.target)
+
+      } else {
+
+        card.classList.add('selected')
+        document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+      }
+
+
+
+
+      else if (evt.target === card) {
+        console.log("pressed card: ",card)
+        selectedCard.classList.remove('selected')
+        name.textContent = element.fullName
+        document.querySelector(".info").textContent = 'No learner is selected'
+
+      } else if (document.querySelector('.selected')) {
+
+        console.log('selectedCard: ', document.querySelector('.selected'))
+
+        if (document.querySelector('.selected')) {
+
+          selectedCard.classList.remove('selected')
+          card.classList.add('selected')
+          name.textContent = `${element.fullName}, ID${element.id}`
+          document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+  
+        } 
+
+      } else {
+        
+        console.log("change class: ", document.querySelector('.selected'))
+        card.classList.add('selected')
+        name.textContent = `${element.fullName}, ID${element.id}`
+        document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+      }
+
+
+      ////////////other/////////////
+
+      if (document.querySelector('.selected')) {
+
+        document.querySelector('.selected').classList.remove('selected')
+        document.querySelector('h3').textContent = element.fullName
+        card.classList.add('selected')
+        card.children[0].textContent = `${element.fullName}, ID${element.id}`
+        document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+      } else if (!card.classList.contains('selected')) {
+
+        document.querySelector('.selected').classList.remove('selected')
+        card.classList.add('selected')
+        card.children[0].textContent = `${element.fullName}, ID${element.id}`
+
+      } else {
+
+        card.classList.remove('selected')
+        card.children[0].textContent = element.fullName
+
+      }
+
+      console.log("clicked target: ", evt.target)
+
+      if (evt.target === card.children[2]) {
+        let mentors = card.children[2]
+
+        if (mentors.classList.contains('closed')) {
+
+          if (document.querySelector('.selected')) {
+
+            selectedCard.classList.remove('selected')
+            document.querySelector('h3').textContent = element.fullName
+            card.classList.add('selected')
+            card.children[0].textContent = `${element.fullName}, ID${element.id}`
+            document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+          } else {
+
+            if (!card.classList.contains('selected')) {
+
+              card.classList.add('selected')
+              card.children[0].textContent = `${element.fullName}, ID${element.id}`
+
+            }
+
+          }
+
+          mentors.classList.remove('closed')
+          mentors.classList.add('open')
+          document.querySelector(".info").textContent = `The selected learner is ${element.fullName}`
+
+        } else {
+
+          console.log("clicked card target: ", mentors)
+          if (!card.classList.contains('selected')) {
+            document.querySelector('.selected').classList.remove('selected')
+            card.classList.add('selected')
+            card.children[0].textContent = `${element.fullName}, ID${element.id}`
+          }
+          mentors.classList.remove('open')
+          mentors.classList.add('closed')
+        }
+      }
+
+      console.log("name: ", name)
